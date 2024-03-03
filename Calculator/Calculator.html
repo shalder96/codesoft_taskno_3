@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Working Calculator</title>
+    <style>
+        p{
+            font-size: 40px;
+            font-weight: 900;
+            color: teal;
+            text-align: center;
+        }
+        #container{
+            height: 400px;
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 40px 30px 40px 30px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 2px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+
+        }
+        #container>div{
+            height: 60px;
+            width: 60px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 8px;
+        }
+        #container>div:nth-child(1){
+            grid-column: 1/5;
+            width: 285px;
+        }
+        input{
+          width: 100%;
+          height: 100%;
+          border: none;
+          font-size: 20px;
+        }
+        .item{
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+        }
+        .item:hover{
+          cursor: pointer;
+        }
+        #container>div:nth-child(14){
+            background-color: red;
+            color: white;
+        }
+        #container>div:nth-child(5),
+        #container>div:nth-child(9), 
+        #container>div:nth-child(13), 
+        #container>div:nth-child(16), 
+        #container>div:nth-child(17){
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Working Calculator</p>
+    <div id="container">
+        <div><input type="text" id="display" readonly></div>
+        <div class="item" onclick="currentDisplay=currentDisplay +'1';
+        document.querySelector('#display').value= currentDisplay; ">1</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'2';
+        document.querySelector('#display').value= currentDisplay; ">2</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'3';
+        document.querySelector('#display').value= currentDisplay; ">3</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'+';
+        document.querySelector('#display').value= currentDisplay; ">+</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'4';
+        document.querySelector('#display').value= currentDisplay; ">4</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'5';
+        document.querySelector('#display').value= currentDisplay; ">5</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'6';
+        document.querySelector('#display').value= currentDisplay; ">6</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'-';
+        document.querySelector('#display').value= currentDisplay; ">-</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'7';
+        document.querySelector('#display').value= currentDisplay; ">7</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'8';
+        document.querySelector('#display').value= currentDisplay; ">8</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'9';
+        document.querySelector('#display').value= currentDisplay; ">9</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'*';
+        document.querySelector('#display').value= currentDisplay; ">X</div>
+        <div class="item" onclick="currentDisplay='';
+        document.querySelector('#display').value= currentDisplay; ">C</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'0';
+        document.querySelector('#display').value= currentDisplay; ">0</div>
+        <div class="item"
+        onclick="
+        currentDisplay=eval(currentDisplay);
+        document.querySelector('#display').value= currentDisplay; ">=</div>
+        <div class="item"
+        onclick="currentDisplay=currentDisplay +'/';
+        document.querySelector('#display').value= currentDisplay; ">/</div>
+
+    </div>
+    
+
+
+    <script>
+      let currentDisplay=''; 
+      document.querySelector('#display').value= currentDisplay;
+    </script>
+</body>
+</html>
